@@ -1,0 +1,61 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="
+        http://www.liquibase.org/xml/ns/dbchangelog
+        https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
+    <changeSet author="Nikita" id="111">
+        <createTable remarks="ресторан" tableName="restaurant">
+            <column autoIncrement="true" name="id" remarks="технический идентификатор" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="id"/>
+            </column>
+            <column name="city" remarks="город в котором расположен" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="name" remarks="название ресторана" type="VARCHAR(60)">
+                <constraints nullable="false" />
+            </column>
+            <column name="estimatedCost" remarks="средний чек на двоих человек" type="INT">
+                <constraints nullable="false" />
+            </column>
+            <column name="averageRating" remarks="средний рейтинг ресторана" type="VARCHAR(3)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="votes" remarks="количество ревью ресторана" type="INT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="112" author="Nikita">
+        <insert tableName="restaurant">
+            <column name="city" value="Красноярск"/>
+            <column name="name" value="Tunguska"/>
+            <column name="estimatedCost" value="3250"/>
+            <column name="averageRating" value="5.0"/>
+            <column name="votes" value="1254"/>
+        </insert>
+        <insert tableName="restaurant">
+            <column name="city" value="Москва"/>
+            <column name="name" value="White Rabbit"/>
+            <column name="estimatedCost" value="7800"/>
+            <column name="averageRating" value="4.9"/>
+            <column name="votes" value="3249"/>
+        </insert>
+        <insert tableName="restaurant">
+            <column name="city" value="Санкт-Петербург"/>
+            <column name="name" value="Ginza"/>
+            <column name="estimatedCost" value="4210"/>
+            <column name="averageRating" value="4.7"/>
+            <column name="votes" value="975"/>
+        </insert>
+        <insert tableName="restaurant">
+            <column name="city" value="Тверь"/>
+            <column name="name" value="Oreh"/>
+            <column name="estimatedCost" value="2780"/>
+            <column name="averageRating" value="3.9"/>
+            <column name="votes" value="853"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
