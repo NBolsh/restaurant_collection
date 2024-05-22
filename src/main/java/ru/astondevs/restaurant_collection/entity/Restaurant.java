@@ -1,4 +1,4 @@
-package ru.astondevs.restaurant_collection.model;
+package ru.astondevs.restaurant_collection.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -6,6 +6,7 @@ import jakarta.persistence.Table;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.GenerationType;
+import jakarta.validation.constraints.Min;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -26,9 +27,14 @@ public class Restaurant {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "estimatedCost", nullable = false)
+    @Column(name = "estimated_cost", nullable = false)
+    @Min(value = 0)
     private Integer estimatedCost;
 
-    @Column(name = "averageRating", nullable = false, length = 3)
+    @Column(name = "average_rating", nullable = false, length = 3)
     private String averageRating;
+
+    @Column(name = "votes", nullable = false)
+    @Min(value = 0)
+    private Integer votes;
 }

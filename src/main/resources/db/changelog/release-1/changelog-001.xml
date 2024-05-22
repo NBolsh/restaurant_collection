@@ -16,10 +16,10 @@
             <column name="name" remarks="название ресторана" type="VARCHAR(60)">
                 <constraints nullable="false" />
             </column>
-            <column name="estimatedCost" remarks="средний чек на двоих человек" type="INT">
+            <column name="estimated_cost" remarks="средний чек на двоих человек" type="INT">
                 <constraints nullable="false" />
             </column>
-            <column name="averageRating" remarks="средний рейтинг ресторана" type="VARCHAR(3)">
+            <column name="average_rating" remarks="средний рейтинг ресторана" type="VARCHAR(3)">
                 <constraints nullable="false"/>
             </column>
             <column name="votes" remarks="количество ревью ресторана" type="INT">
@@ -32,30 +32,58 @@
         <insert tableName="restaurant">
             <column name="city" value="Красноярск"/>
             <column name="name" value="Tunguska"/>
-            <column name="estimatedCost" value="3250"/>
-            <column name="averageRating" value="5.0"/>
+            <column name="estimated_cost" value="3250"/>
+            <column name="average_rating" value="5.0"/>
             <column name="votes" value="1254"/>
         </insert>
         <insert tableName="restaurant">
             <column name="city" value="Москва"/>
             <column name="name" value="White Rabbit"/>
-            <column name="estimatedCost" value="7800"/>
-            <column name="averageRating" value="4.9"/>
+            <column name="estimated_cost" value="7800"/>
+            <column name="average_rating" value="4.9"/>
             <column name="votes" value="3249"/>
         </insert>
         <insert tableName="restaurant">
             <column name="city" value="Санкт-Петербург"/>
             <column name="name" value="Ginza"/>
-            <column name="estimatedCost" value="4210"/>
-            <column name="averageRating" value="4.7"/>
+            <column name="estimated_cost" value="4210"/>
+            <column name="average_rating" value="4.7"/>
             <column name="votes" value="975"/>
         </insert>
         <insert tableName="restaurant">
             <column name="city" value="Тверь"/>
             <column name="name" value="Oreh"/>
-            <column name="estimatedCost" value="2780"/>
-            <column name="averageRating" value="3.9"/>
+            <column name="estimated_cost" value="2780"/>
+            <column name="average_rating" value="3.9"/>
             <column name="votes" value="853"/>
+        </insert>
+        <insert tableName="restaurant">
+            <column name="city" value="Москва"/>
+            <column name="name" value="Peshi"/>
+            <column name="estimated_cost" value="1950"/>
+            <column name="average_rating" value="4.7"/>
+            <column name="votes" value="289"/>
+        </insert>
+        <insert tableName="restaurant">
+            <column name="city" value="Красноярск"/>
+            <column name="name" value="0.75 please"/>
+            <column name="estimated_cost" value="4560"/>
+            <column name="average_rating" value="5.0"/>
+            <column name="votes" value="853"/>
+        </insert>
+        <insert tableName="restaurant">
+            <column name="city" value="Красноярск"/>
+            <column name="name" value="Перцы"/>
+            <column name="estimated_cost" value="1700"/>
+            <column name="average_rating" value="4.1"/>
+            <column name="votes" value="7856"/>
+        </insert>
+        <insert tableName="restaurant">
+            <column name="city" value="Тверь"/>
+            <column name="name" value="Император"/>
+            <column name="estimated_cost" value="2500"/>
+            <column name="average_rating" value="4.3"/>
+            <column name="votes" value="567"/>
         </insert>
     </changeSet>
 </databaseChangeLog>
