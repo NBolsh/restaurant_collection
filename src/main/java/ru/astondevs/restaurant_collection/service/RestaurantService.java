@@ -5,7 +5,6 @@ import ru.astondevs.restaurant_collection.entity.Restaurant;
 
 import java.util.List;
 
-
 public interface RestaurantService {
     Restaurant findById(Integer id);
 

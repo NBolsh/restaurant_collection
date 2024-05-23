@@ -34,13 +34,15 @@ public class RestaurantController {
     @Operation(summary = "Получение списка ресторанов")
     @GetMapping
     public ResponseEntity<List<Restaurant>> findAll() {
-        return ResponseEntity.ok().body(service.findAll());
+        List<Restaurant> restaurantList = service.findAll();
+        return ResponseEntity.ok().body(restaurantList);
     }
 
     @Operation(summary = "Получение списка ресторанов по заданному городу")
     @GetMapping(value = "/query", params = {"city"})
     public ResponseEntity<List<Restaurant>> findAllByCity(@RequestParam String city) {
-        return ResponseEntity.ok().body(service.findAllByCity(city));
+        List<Restaurant> restaurantList = service.findAllByCity(city);
+        return ResponseEntity.ok().body(restaurantList);
     }
 
     @Operation(summary = "Получение ресторана по id")
@@ -54,7 +56,8 @@ public class RestaurantController {
             description = "Возвращает список ресторанов отсортированный по их среднему рейтингу")
     @GetMapping("/sort")
     public ResponseEntity<List<Restaurant>> findAllSortedByRating() {
-        return ResponseEntity.ok().body(service.findAllSortedByRating());
+        List<Restaurant> sortedRestaurantList = service.findAllSortedByRating();
+        return ResponseEntity.ok().body(sortedRestaurantList);
     }
 
     @Operation(summary = "Добавление нового ресторана")

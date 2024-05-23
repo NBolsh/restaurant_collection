@@ -1,0 +1,24 @@
+version: '1'
+
+services:
+
+  postgres_db:
+    image: 'postgres:16'
+    container_name: 'postgresqldb'
+    ports:
+      - "5432:5432"
+    environment:
+      - 'POSTGRES_USER=root'
+      - 'POSTGRES_PASSWORD=root'
+      - 'POSTGRES_DB=postgres_aston'
+
+  app:
+    build: ./
+    container_name: 'java-app'
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres_db
+    environment:
+      - SERVER_PORT=8080
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres_db/postgres_aston

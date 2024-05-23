@@ -12,7 +12,6 @@ import ru.astondevs.restaurant_collection.service.RestaurantService;
 
 import java.util.List;
 
-
 @Service
 @AllArgsConstructor
 public class RestaurantServiceImpl implements RestaurantService {
